@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.kanishk.code.shutterfly.widgets.CustomSwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/home_activity_layout"
+            android:orientation="vertical"
+            android:fillViewport="false"
+            android:background="#fff"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_marginBottom="48dp"
+                android:descendantFocusability="blocksDescendants">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/banner_viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginBottom="12dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/indicator_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp">
+
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/viewpager_indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_alignParentBottom="true"/>
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/images_rcview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/indicator_layout"
+                    android:layout_marginTop="2dp"/>
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+    </com.kanishk.code.shutterfly.widgets.CustomSwipeRefreshLayout>
+
+</RelativeLayout>

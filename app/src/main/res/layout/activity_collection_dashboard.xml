@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="presenter"
+            type="com.kanishk.code.shutterfly.presenter.activity.CollectionDashboardPresenter">
+        </variable>
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/drawerLayoutAndroidExample"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.CoordinatorLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cl_expert_list_activity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/toolbar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:contentScrim="?attr/colorPrimary">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/cover_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="350dp"
+                            fresco:scaleType="centerCrop"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black"
+                        android:alpha="0.6">
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.kanishk.code.shutterfly.widgets.PrimaryTextStyleMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{presenter.collectionDescription}"
+                            android:textColor="@color/colorWhite"
+                            android:layout_above="@id/collection_count"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"/>
+
+                        <com.kanishk.code.shutterfly.widgets.PrimaryTextStyleMedium
+                            android:id="@+id/collection_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{presenter.photoCount}"
+                            android:background="@drawable/transparent_rectangular_box"
+                            android:textColor="@color/colorWhite"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_marginLeft="8dp" />
+
+                    </RelativeLayout>
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@android:color/transparent"
+                        app:layout_collapseMode="pin">
+
+                        <com.kanishk.code.shutterfly.widgets.PrimaryTextStyleMedium
+                            android:id="@+id/toolbar_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{presenter.collectionName}"
+                            android:textColor="@color/colorWhite"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp"
+                            android:gravity="start" />
+
+                    </android.support.v7.widget.Toolbar>
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar_other"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@android:color/transparent"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.kanishk.code.shutterfly.widgets.PrimaryTextStyleMedium
+                                android:id="@+id/toolbar_other_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/app_name"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/colorWhite"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.Toolbar>
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/expert_list_activity_layout"
+                android:orientation="vertical"
+                android:fillViewport="true"
+                android:background="@color/colorRegScreenBoxFont"
+                android:scrollbars="none"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFF"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_marginBottom="48dp">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/collection_photo_rcview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"/>
+
+                </RelativeLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </android.support.design.widget.CoordinatorLayout>
+    </android.support.v4.widget.DrawerLayout>
+
+</layout>

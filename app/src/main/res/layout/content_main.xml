@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.kanishk.code.shutterfly.view.activity.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <com.kanishk.code.shutterfly.widgets.CustomSwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/home_activity_layout"
+            android:orientation="vertical"
+            android:fillViewport="false"
+            android:background="#fff"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+                <!--<android.support.v4.view.ViewPager
+                    android:id="@+id/banner_viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:scaleType="centerCrop"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp">
+
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/viewpager_indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_alignParentBottom="true"/>
+
+                </RelativeLayout>-->
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+        </ScrollView>
+    </com.kanishk.code.shutterfly.widgets.CustomSwipeRefreshLayout>
+
+</RelativeLayout>

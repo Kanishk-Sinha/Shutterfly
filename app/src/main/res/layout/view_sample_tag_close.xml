@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_margin="4dp">
+
+    <com.kanishk.code.shutterfly.widgets.PrimaryTextStyleMedium
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@android:id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:textColor="#000"
+        android:singleLine="true"
+        android:maxLength="30"
+        android:backgroundTint="@android:color/transparent"
+        android:text="hesdgshsdhfhlo"
+        android:textSize="14dp"
+        android:layout_margin="8dp"
+        android:imeOptions="actionDone"
+        android:focusableInTouchMode="false"
+        android:cursorVisible="false"/>
+
+    <ImageView
+        android:id="@+id/remove_chip_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="4dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

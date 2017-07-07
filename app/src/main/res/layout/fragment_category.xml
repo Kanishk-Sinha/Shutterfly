@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:chip="http://schemas.android.com/tools"
+    android:id="@+id/home_activity_layout"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:background="#e0e0e0"
+    android:scrollbars="none"
+    android:paddingTop="1dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <!--<android.support.v7.widget.RecyclerView
+        android:id="@+id/category_rcview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.kanishk.code.shutterfly.widgets.PrimaryTextStyleMedium
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick a category"
+            android:textSize="14dp"
+            android:textColor="@color/colorBlack"
+            android:layout_margin="12dp"/>
+
+        <com.plumillonforge.android.chipview.ChipView
+            android:id="@+id/chipview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            chip:chip_padding="40dp"
+            android:layout_marginBottom="16dp"
+            android:layout_below="@id/heading"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"/>
+
+    </RelativeLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
